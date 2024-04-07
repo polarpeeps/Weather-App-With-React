@@ -1,6 +1,7 @@
 import React from 'react'
-const WeatherCard = ({location,temp,det}) => {
-    const imgSource="./images/"+det+".png"
+const WeatherCard = ({location,temp,det,weather}) => {
+    console.log(weather)
+    // const imgSource="./images/"+det+".png"
     return (
         <div   >
             <div className="card">
@@ -15,7 +16,7 @@ const WeatherCard = ({location,temp,det}) => {
                     </div>
                 </div>
                 <div className="card-image">
-                    <img src={imgSource} alt="ima" width="82" height="82" fill="white" viewBox="0 0 16 16">
+                    <img src={`https://openweathermap.org/img/wn/${weather}@2x.png`} alt={weather} width="82" height="82" fill="white" viewBox="0 0 16 16">
                     </img>
                 </div>
             </div>

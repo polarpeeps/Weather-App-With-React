@@ -3,10 +3,12 @@ import { useState } from 'react'
 const InputArea = (props) => {
     const [search, setSearch] = useState('');
     const generateEndpointWithName = (name) => {
-        return `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=fbc954f04e62dbcdc3db0960f067ab53`;        
+      console.log(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${process.env.REACT_APP_API_ID}`)
+        return `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${process.env.REACT_APP_API_ID}`;        
     }
     const generateEndpoint = (latitude, longitude) => {
-        return `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=fbc954f04e62dbcdc3db0960f067ab53`
+        console.log(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_ID}`)
+        return `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_ID}`
     }
     const getCurrentLocation = () => {
         return new Promise((resolve, reject) => {
