@@ -3,11 +3,9 @@ import { useState } from 'react'
 const InputArea = (props) => {
     const [search, setSearch] = useState('');
     const generateEndpointWithName = (name) => {
-      console.log(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${process.env.REACT_APP_API_ID}`)
         return `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${process.env.REACT_APP_API_ID}`;        
     }
     const generateEndpoint = (latitude, longitude) => {
-        console.log(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_ID}`)
         return `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_ID}`
     }
     const getCurrentLocation = () => {
@@ -48,7 +46,7 @@ const InputArea = (props) => {
                         }}
                         name="text"
                         value={search}
-                        className="input"
+                        className="input text-white"
                         id="input"
                         placeholder="Search" />
                     <abbr title="Search">
